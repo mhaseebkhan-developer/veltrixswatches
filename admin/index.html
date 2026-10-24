@@ -1,0 +1,90 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin — VELTRIXS WATCHES</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/css/admin.css"><link rel="stylesheet" href="../assets/css/admin-luxe.css"></head><body class="login-page"><main class="login-card"><div class="side-kicker" style="margin:0 0 12px">MANAGEMENT CONSOLE</div><h1 class="vx-wordmark" aria-label="VELTRIXS WATCHES"><span class="vx-wordmark-primary">VELTRIXS</span><span class="vx-wordmark-secondary">WATCHES</span></h1><h2 style="font:26px 'Playfair Display',serif;font-weight:400">Secure Admin Sign In</h2><p>Authorized store managers only. Sign in with the email and password you created in Supabase Authentication.</p><form id="adminLogin" class="admin-login-form" style="margin:20px 0"><div class="field"><label for="adminEmail">Email</label><input id="adminEmail" type="email" autocomplete="username" required></div><div class="field"><label for="adminPassword">Password</label><input id="adminPassword" type="password" autocomplete="current-password" required></div><button class="btn btn-dark" type="submit">SIGN IN →</button><p id="loginStatus" role="status" style="color:#a33"></p></form>
+<button type="button" id="forgotToggle" style="background:none;border:0;text-decoration:underline;font:11px Inter,Arial,sans-serif;color:#666;padding:0 0 12px;cursor:pointer">FORGOT PASSWORD?</button>
+<form id="recoveryRequest" hidden style="margin:4px 0 18px" autocomplete="on">
+ <div class="field"><label for="recoveryEmail">Email for recovery</label><input id="recoveryEmail" type="email" autocomplete="email" required></div>
+ <button class="btn btn-dark" type="submit">SEND PASSWORD RESET LINK →</button>
+ <p id="recoveryStatus" role="status" aria-live="polite"></p>
+</form>
+<form id="changePassword" hidden style="margin:12px 0 22px" autocomplete="off">
+ <h2 style="font:26px 'Playfair Display',serif;font-weight:400;margin:8px 0 12px">Choose a New Password</h2>
+ <p>Your recovery link has been verified. Set a new password below.</p>
+ <div class="field"><label for="newPassword">New password</label><input id="newPassword" type="password" autocomplete="new-password" minlength="12" required></div>
+ <div class="field"><label for="confirmPassword">Confirm password</label><input id="confirmPassword" type="password" autocomplete="new-password" minlength="12" required></div>
+ <button class="btn btn-dark" type="submit">UPDATE PASSWORD →</button>
+ <p id="changeStatus" role="status" aria-live="polite"></p>
+</form>
+<a class="btn" style="margin-top:12px" href="../index.html">BACK TO WEBSITE</a></main><script src="../assets/js/backend.js"></script><script>
+const loginForm=document.getElementById('adminLogin');
+const forgot=document.getElementById('forgotToggle');
+const recoveryForm=document.getElementById('recoveryRequest');
+const changeForm=document.getElementById('changePassword');
+let recoveryToken=null;
+
+loginForm.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const b=e.currentTarget.querySelector('button'),s=document.getElementById('loginStatus');
+  b.disabled=true;s.textContent='Signing in…';
+  try{
+    await VXNET.signIn(document.getElementById('adminEmail').value,document.getElementById('adminPassword').value);
+    if(!(await VXNET.isAdmin())){VXNET.signOut();throw Error('This account does not have admin access.');}
+    location.href='dashboard.html';
+  }catch(err){s.textContent=err.message;b.disabled=false;}
+});
+
+forgot.addEventListener('click',()=>{
+  recoveryForm.hidden=!recoveryForm.hidden;
+  const email=document.getElementById('adminEmail').value;
+  if(email) document.getElementById('recoveryEmail').value=email;
+});
+
+recoveryForm.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const b=e.currentTarget.querySelector('button'),s=document.getElementById('recoveryStatus');
+  b.disabled=true;s.textContent='Sending link…';
+  try{
+    const redirectTo=location.origin+location.pathname; // e.g. https://owner.github.io/veltrixwatches/admin/index.html
+    await VXNET.sendRecoveryEmail(document.getElementById('recoveryEmail').value,redirectTo);
+    s.textContent='If an account exists, a new recovery link has been sent. Open it in this browser.';
+  }catch(err){s.textContent=err.message;}
+  finally{b.disabled=false;}
+});
+
+changeForm.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const b=e.currentTarget.querySelector('button'),s=document.getElementById('changeStatus');
+  const pass=document.getElementById('newPassword').value;
+  const confirm=document.getElementById('confirmPassword').value;
+  if(pass.length<12){s.textContent='Use at least 12 characters.';return;}
+  if(pass!==confirm){s.textContent='Passwords do not match.';return;}
+  b.disabled=true;s.textContent='Updating password…';
+  try{
+    await VXNET.updateRecoveredPassword(recoveryToken,pass);
+    recoveryToken=null; VXNET.signOut();
+    document.getElementById('newPassword').value='';
+    document.getElementById('confirmPassword').value='';
+    changeForm.hidden=true;loginForm.hidden=false;forgot.hidden=false;
+    document.getElementById('loginStatus').style.color='#27683d';
+    document.getElementById('loginStatus').textContent='Password updated. Sign in with your new password.';
+  }catch(err){s.textContent=err.message+' Request a fresh recovery email if your link has expired.';}
+  finally{b.disabled=false;}
+});
+
+// Supabase's default email recovery verification redirects to this page with
+// #access_token=...&type=recovery. Consume once and remove URL secrets immediately.
+(function handleRecoveryRedirect(){
+  const fragment=new URLSearchParams(location.hash.replace(/^#/,''));
+  const query=new URLSearchParams(location.search);
+  const error=fragment.get('error_description')||query.get('error_description')||query.get('error');
+  const isRecovery=fragment.get('type')==='recovery';
+  const token=fragment.get('access_token');
+  if(location.hash || error){history.replaceState(null,'',location.pathname);}
+  if(error){document.getElementById('loginStatus').textContent=error+' Request a fresh recovery link.';return;}
+  if(isRecovery && token){
+    recoveryToken=token;
+    loginForm.hidden=true;forgot.hidden=true;recoveryForm.hidden=true;changeForm.hidden=false;
+    document.getElementById('newPassword').focus();
+  }else if(isRecovery){
+    document.getElementById('loginStatus').textContent='Recovery link is invalid or expired. Request a new link.';
+  }
+})();
+</script></body></html>

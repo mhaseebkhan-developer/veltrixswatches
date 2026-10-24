@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Collections — VELTRIXS WATCHES</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--b:#0c0c0c;--g:#b99761;--c:#f5f2ec;--l:#e5e1da;--s:'Inter',Arial,sans-serif;--r:'Playfair Display',Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--s);color:var(--b);overflow-x:hidden}a{text-decoration:none;color:inherit}
+.announce{background:#0c0c0c;color:white;text-align:center;padding:10px;font-size:9px;letter-spacing:2px}.header{position:sticky;top:0;background:#fff;z-index:50;border-bottom:1px solid #eee}.nav{height:76px;max-width:1500px;margin:auto;padding:0 34px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}.logo{font:31px var(--r);letter-spacing:7px}.tools{display:flex;gap:22px;font-size:9px;letter-spacing:1.5px;align-items:center}.right{justify-content:flex-end}.hamb{display:none;border:0;background:none;flex-direction:column;gap:5px}.hamb i{width:21px;height:1.5px;background:#111}.links{display:flex;justify-content:center;gap:38px;border-top:1px solid #f2f0eb;padding:14px;font-size:9px;letter-spacing:2px}.links a:hover{color:var(--g)}
+.search-mobile{display:none}
+.btn{display:inline-block;border:1px solid currentColor;padding:15px 24px;font-size:9px;letter-spacing:2px;transition:.3s;cursor:pointer}.btn:hover{background:#fff;color:#111}
+
+/* Page hero */
+.page-hero{position:relative;height:56vh;min-height:420px;color:#fff;overflow:hidden}
+.page-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0006,#0009 60%,#000d),url("https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=2200&q=90") center 35%/cover}
+.page-hero-content{position:relative;z-index:1;max-width:1500px;height:100%;margin:auto;padding:0 34px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.crumb{font-size:9px;letter-spacing:2px;color:#ddd;margin-bottom:16px}.crumb a:hover{color:var(--g)}
+.page-hero h1{font:clamp(46px,6vw,72px) var(--r);letter-spacing:-1px}
+.page-hero p{max-width:480px;color:#e2e2e2;font-size:12.5px;line-height:1.9;margin-top:14px}
+
+.section{max-width:1500px;margin:auto;padding:90px 34px}
+.head{text-align:center;margin-bottom:48px}.eyebrow{color:var(--g);font-size:9px;letter-spacing:3px}.head h2{font:38px var(--r);margin-top:10px}.head p{font-size:12px;color:#777;margin-top:9px}
+
+/* Signature collections - large tiles */
+.collections-hero{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px}
+.collection{position:relative;height:520px;overflow:hidden;border-radius:2px;transition:.4s}
+.collection img{width:100%;height:100%;object-fit:cover;transition:.8s cubic-bezier(.25,.8,.25,1)}
+.collection:hover img{transform:scale(1.06)}
+.collection:hover{box-shadow:0 20px 50px #0003}
+.collection:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,#000c)}
+.cc{position:absolute;z-index:2;bottom:32px;left:30px;right:30px;color:#fff}
+.cc small{font-size:8px;letter-spacing:2.5px;color:var(--g)}
+.cc h3{font:32px var(--r);font-weight:500;margin:9px 0 16px}
+.cc-link{display:inline-flex;align-items:center;gap:8px;font-size:8.5px;letter-spacing:2px;border-bottom:1px solid;padding-bottom:3px;transition:.25s}
+.collection:hover .cc-link{gap:14px}
+
+/* Category grid - smaller tiles */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat-tile{position:relative;height:300px;overflow:hidden;border-radius:2px;transition:.35s}
+.cat-tile:hover{transform:translateY(-5px);box-shadow:0 16px 36px #0002}
+.cat-tile img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.cat-tile:hover img{transform:scale(1.08)}
+.cat-tile:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,#000a)}
+.ct{position:absolute;z-index:2;bottom:22px;left:22px;color:#fff}
+.ct small{font-size:7.5px;letter-spacing:2px;color:var(--g)}
+.ct h4{font:19px var(--r);font-weight:500;margin-top:6px}
+
+/* Banner CTA */
+.promo{background:var(--c);display:grid;grid-template-columns:1fr 1fr;min-height:440px}
+.promo-img{background:url("https://images.unsplash.com/photo-1751437774882-deeea4352018?auto=format&fit=crop&w=1400&q=90") center/cover}
+.promo-copy{padding:70px 9%;display:flex;flex-direction:column;justify-content:center}
+.promo-copy h2{font:42px/1.1 var(--r);margin:14px 0 18px}
+.promo-copy p{font-size:12px;line-height:2;color:#666;max-width:430px;margin-bottom:26px}
+
+footer{background:#111;color:white;padding:65px 34px 22px}.foot{max-width:1400px;margin:auto;display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:35px}.flogo{font:30px var(--r);letter-spacing:6px}.col h4{font-size:8px;color:#aaa;letter-spacing:2px;margin-bottom:18px}.col a{display:block;color:#ddd;font-size:10px;margin:0 0 11px}.bottom{max-width:1400px;margin:45px auto 0;border-top:1px solid #333;padding-top:17px;color:#777;font-size:8px;display:flex;justify-content:space-between}
+.search{position:fixed;inset:0;background:#fff;z-index:100;display:none;padding:35px}.search.open{display:block}.search-inner{max-width:750px;margin:auto}.search h2{font:40px var(--r);margin:80px 0 25px}.search input{width:100%;border:0;border-bottom:1px solid;padding:16px 4px;outline:0;font-size:18px}.search-close{float:right;border:0;background:none;font-size:18px;cursor:pointer}.results div{padding:12px 3px;border-bottom:1px solid #eee;font-size:12px}
+.cart{position:fixed;right:-420px;top:0;width:400px;height:100%;background:#fff;z-index:99;padding:25px;box-shadow:-15px 0 40px #0002;transition:.4s}.cart.open{right:0}.cart-head{display:flex;justify-content:space-between;border-bottom:1px solid var(--l);padding-bottom:18px;font-size:10px;letter-spacing:1px}.cart-item{display:flex;gap:14px;padding:22px 0}.cart-item img{width:80px;height:95px;object-fit:cover}.cart-total{position:absolute;left:25px;right:25px;bottom:25px;border-top:1px solid var(--l);padding-top:18px}.checkout{width:100%;margin-top:14px;padding:14px;background:#111;color:#fff;border:0;font-size:9px;letter-spacing:2px;cursor:pointer}
+.overlay{position:fixed;inset:0;background:#0007;z-index:90;display:none}
+
+@media(max-width:1000px){.collections-hero{grid-template-columns:1fr}.collection{height:380px}.cat-grid{grid-template-columns:1fr 1fr}.promo{grid-template-columns:1fr}.promo-img{height:320px}}
+@media(max-width:850px){.nav{height:64px;padding:0 15px;display:flex;justify-content:space-between;align-items:center}.hamb{display:flex}.logo{font-size:22px;letter-spacing:4px}.tools{gap:11px;font-size:8px}.logo{order:2}.right{order:3}.search-desktop{display:none}.search-mobile{display:inline-flex;align-items:center;font-size:18px}.account{display:none}.links{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:0;z-index:40}.links.open{display:flex}.links a{padding:16px 20px;border-bottom:1px solid #eee}
+.page-hero{height:44vh;min-height:320px}.section{padding:60px 18px}.cat-grid{grid-template-columns:1fr 1fr;gap:10px}.cat-tile{height:220px}.promo-copy{padding:50px 24px}
+}
+</style>
+<link href="assets/css/site.css" rel="stylesheet"/><link rel="stylesheet" href="assets/css/luxe.css"></head>
+<body data-page="collections">
+<div class="announce">COMPLIMENTARY SHIPPING ON ORDERS OVER PKR 25,000</div>
+<header class="header" id="header">
+<div class="nav">
+<div class="tools"><button class="hamb" id="hamb"><i></i><i></i><i></i></button><span class="search-desktop" onclick="openSearch()" style="cursor:pointer">⌕ SEARCH</span></div>
+<a class="logo vx-wordmark" aria-label="VELTRIXS WATCHES home" href="index.html"><span class="vx-wordmark-primary">VELTRIXS</span><span class="vx-wordmark-secondary">WATCHES</span></a>
+<div class="tools right"><span class="search-mobile" onclick="openSearch()" style="cursor:pointer">⌕</span><a class="account" href="account.html">ACCOUNT</a><a href="wishlist.html">♡</a><span onclick="openCart()" style="cursor:pointer">CART (<b id="count">0</b>)</span></div>
+</div>
+<nav class="links" id="links"><a href="shop.html">NEW ARRIVALS</a><a href="shop.html?category=men">MEN</a><a href="shop.html?category=women">WOMEN</a><a href="shop.html?category=timepieces">TIMEPIECES</a><a href="collections.html">COLLECTIONS</a><a href="shop.html?category=accessories">ACCESSORIES</a><a href="shop.html?category=sale">SALE</a></nav>
+</header>
+<section class="page-hero"><div class="page-hero-content">
+<div class="crumb"><a href="index.html">HOME</a> / COLLECTIONS</div>
+<h1>Our Collections</h1>
+<p>Every VELTRIXS WATCHES collection is shaped around a singular idea — balance, proportion, and enduring elegance. Explore the world by movement, finish, and story.</p>
+</div></section>
+<section class="section">
+<div class="head"><div class="eyebrow">SIGNATURE</div><h2>Defined by Craft</h2><p>Three collections at the heart of VELTRIXS WATCHES.</p></div>
+<div class="collections-hero">
+<a class="collection" href="shop.html?category=automatic"><img alt="Automatic Collection" src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&amp;fit=crop&amp;w=1200&amp;q=90"/><div class="cc"><small>01 / SIGNATURE</small><h3>Automatic</h3><span class="cc-link">DISCOVER COLLECTION →</span></div></a>
+<a class="collection" href="shop.html?category=gold"><img alt="Gold Collection" src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&amp;fit=crop&amp;w=1000&amp;q=90"/><div class="cc"><small>02 / CLASSIC</small><h3>Gold</h3><span class="cc-link">DISCOVER COLLECTION →</span></div></a>
+<a class="collection" href="shop.html?category=black"><img alt="Black Steel Collection" src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&amp;fit=crop&amp;w=1000&amp;q=90"/><div class="cc"><small>03 / NOCTURNE</small><h3>Black Steel</h3><span class="cc-link">DISCOVER COLLECTION →</span></div></a>
+</div>
+</section>
+<section class="section" style="padding-top:0">
+<div class="head"><div class="eyebrow">EXPLORE</div><h2>Shop by Category</h2><p>Find the piece that fits your world.</p></div>
+<div class="cat-grid">
+<a class="cat-tile" href="shop.html?category=men"><img alt="Men" src="https://images.unsplash.com/photo-1618215649540-2212685e4c14?auto=format&amp;fit=crop&amp;w=800&amp;q=90"/><div class="ct"><small>FOR HIM</small><h4>Men</h4></div></a>
+<a class="cat-tile" href="shop.html?category=women"><img alt="Women" src="https://images.unsplash.com/photo-1751437761644-460ae92e34c9?auto=format&amp;fit=crop&amp;w=800&amp;q=90"/><div class="ct"><small>FOR HER</small><h4>Women</h4></div></a>
+<a class="cat-tile" href="shop.html?category=accessories"><img alt="Accessories" src="https://images.unsplash.com/photo-1613704193420-a53cab02d194?auto=format&amp;fit=crop&amp;w=800&amp;q=90"/><div class="ct"><small>STRAPS &amp; MORE</small><h4>Accessories</h4></div></a>
+<a class="cat-tile" href="shop.html?category=sale"><img alt="Sale" src="https://images.unsplash.com/photo-1618215650201-8d552591218d?auto=format&amp;fit=crop&amp;w=800&amp;q=90"/><div class="ct"><small>LIMITED TIME</small><h4>Sale</h4></div></a>
+</div>
+</section>
+<section class="promo">
+<div class="promo-img"></div>
+<div class="promo-copy">
+<div class="eyebrow">NEW THIS SEASON</div>
+<h2>The Aurora Collection has arrived.</h2>
+<p>Rose gold cases, mother-of-pearl dials, and a silhouette built for everyday elegance. Discover the pieces defining VELTRIXS WATCHES's newest chapter.</p>
+<a class="btn" href="shop.html?category=new" style="width:max-content;background:#111;color:#fff;border-color:#111">SHOP NEW ARRIVALS</a>
+</div>
+</section>
+<footer><div class="foot"><div class="brand"><div class="flogo vx-wordmark" aria-label="VELTRIXS WATCHES"><span class="vx-wordmark-primary">VELTRIXS</span><span class="vx-wordmark-secondary">WATCHES</span></div><p style="color:#777;font-size:10px;margin-top:16px">Luxury timepieces for the modern collector.</p></div><div class="col"><h4>SHOP</h4><a href="shop.html">All Watches</a><a href="shop.html?category=men">Men</a><a href="shop.html?category=women">Women</a><a href="shop.html">New Arrivals</a></div><div class="col"><h4>ABOUT</h4><a href="about.html">Our Story</a><a href="contact.html">Contact</a><a href="collections.html">Collections</a><a href="search.html">Search</a></div><div class="col"><h4>CUSTOMER CARE</h4><a href="contact.html">Help Center</a><a href="contact.html?topic=shipping">Shipping &amp; Delivery</a><a href="contact.html?topic=returns">Returns &amp; Exchange</a><a href="contact.html?topic=privacy">Privacy Policy</a></div></div><div class="bottom"><span>© 2026 VELTRIXS WATCHES. ALL RIGHTS RESERVED.</span><span>INSTAGRAM · FACEBOOK · TIKTOK</span></div></footer>
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="cart" id="cart"><div class="cart-head"><span>YOUR CART</span><span onclick="closeCart()" style="cursor:pointer">✕</span></div><div class="cart-item"><img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&amp;fit=crop&amp;w=300&amp;q=85"/><div><b>VELTRIXS WATCHES Timepiece</b><p style="font-size:11px;margin-top:8px">Your cart is ready for checkout.</p></div></div><div class="cart-total"><div style="display:flex;justify-content:space-between;font-size:11px"><span>SUBTOTAL</span><b>PKR 0</b></div><button class="checkout" onclick="location.href='cart.html'">VIEW CART &amp; CHECKOUT</button></div></aside>
+<div class="search" id="search"><button class="search-close" onclick="closeSearch()">✕</button><div class="search-inner"><h2>Search VELTRIXS WATCHES</h2><input id="q" oninput="searchProducts()" placeholder="Search watches..."/><div class="results" id="results"><div>Try “automatic”, “gold”, or a watch name.</div></div></div></div>
+
+<script src="assets/js/backend.js"></script><script src="assets/js/store.js"></script><script src="assets/js/frontend.js"></script></body>
+</html>

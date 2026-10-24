@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Shop All Timepieces — VELTRIXS WATCHES</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--b:#0c0c0c;--g:#b99761;--c:#f5f2ec;--l:#e5e1da;--s:'Inter',Arial,sans-serif;--r:'Playfair Display',Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--s);color:var(--b);overflow-x:hidden}a{text-decoration:none;color:inherit}
+.announce{background:#0c0c0c;color:white;text-align:center;padding:10px;font-size:9px;letter-spacing:2px}.header{position:sticky;top:0;background:#fff;z-index:50;border-bottom:1px solid #eee}.nav{height:76px;max-width:1500px;margin:auto;padding:0 34px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}.logo{font:31px var(--r);letter-spacing:7px}.tools{display:flex;gap:22px;font-size:9px;letter-spacing:1.5px;align-items:center}.right{justify-content:flex-end}.hamb{display:none;border:0;background:none;flex-direction:column;gap:5px}.hamb i{width:21px;height:1.5px;background:#111}.links{display:flex;justify-content:center;gap:38px;border-top:1px solid #f2f0eb;padding:14px;font-size:9px;letter-spacing:2px}.links a:hover,.links a.active{color:var(--g)}
+.search-mobile{display:none}
+.btn{display:inline-block;border:1px solid currentColor;padding:16px 25px;font-size:9px;letter-spacing:2px;transition:.3s;cursor:pointer}.btn:hover{background:#fff;color:#111}
+/* Shop hero + breadcrumb */
+.shop-hero{position:relative;padding:100px 34px;text-align:center;color:#fff;overflow:hidden}
+.shop-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#000a,#0007 55%,#000c),url("https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=2000&q=90") center 30%/cover}
+.shop-hero>*{position:relative;z-index:1}
+.crumb{font-size:9px;letter-spacing:2px;color:#ddd;margin-bottom:16px}.crumb a{opacity:.85}.crumb a:hover{color:var(--g);opacity:1}
+.shop-hero h1{font:52px var(--r);letter-spacing:-1px}.shop-hero p{font-size:12px;color:#e2e2e2;margin-top:12px;letter-spacing:.3px}
+/* Layout */
+.shop-wrap{max-width:1500px;margin:auto;padding:50px 34px 100px}
+.toolbar{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--l);padding-bottom:20px;margin-bottom:38px;font-size:10px;letter-spacing:1px}
+.toolbar .count{color:#999}.toolbar-right{display:flex;align-items:center;gap:16px}
+.sort select{appearance:none;-webkit-appearance:none;border:1px solid var(--l);background:#fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6"><path d="M0 0l5 6 5-6z" fill="%230c0c0c"/></svg>') no-repeat right 14px center;padding:11px 34px 11px 16px;font-size:9px;letter-spacing:1px;font-family:var(--s);cursor:pointer;transition:.25s}
+.sort select:hover{border-color:var(--b)}
+.filter-toggle{display:none;border:1px solid var(--b);background:none;padding:10px 18px;font-size:9px;letter-spacing:1.5px;cursor:pointer;transition:.25s}.filter-toggle:hover{background:var(--b);color:#fff}
+.shop-layout{display:grid;grid-template-columns:250px 1fr;gap:56px;align-items:start}
+aside.fsidebar{position:sticky;top:110px}
+.fgroup{margin-bottom:38px}.fgroup h4{font-size:9px;letter-spacing:2px;color:var(--b);margin-bottom:18px;padding-bottom:11px;border-bottom:1px solid var(--l)}
+.fgroup label{display:flex;align-items:center;gap:10px;font-size:11.5px;color:#555;margin-bottom:14px;cursor:pointer;transition:.2s}
+.fgroup input{accent-color:var(--g);width:14px;height:14px;cursor:pointer}
+.fgroup label:hover{color:var(--b)}
+.clear-filters{font-size:9px;letter-spacing:1.5px;color:var(--g);border-bottom:1px solid var(--g);width:max-content;cursor:pointer;background:none;border-top:0;border-left:0;border-right:0;padding:0 0 3px;transition:.2s}.clear-filters:hover{color:var(--b);border-color:var(--b)}
+/* Products grid (reused card style) */
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 22px}
+.card{position:relative;transition:.35s}
+.pic{height:360px;overflow:hidden;background:#f0efec;border-radius:2px;position:relative}.pic img{width:100%;height:100%;object-fit:cover;transition:.6s cubic-bezier(.25,.8,.25,1)}.card:hover .pic img{transform:scale(1.07)}
+.card:hover{transform:translateY(-4px)}
+.badge{position:absolute;z-index:2;top:14px;left:14px;background:#fff;padding:7px 10px;font-size:7px;letter-spacing:1.5px;box-shadow:0 2px 10px #0001}.badge.sale{background:var(--b);color:#fff}
+.heart{position:absolute;right:13px;top:13px;z-index:3;width:35px;height:35px;border:0;border-radius:50%;background:#fff;cursor:pointer;font-size:16px;box-shadow:0 2px 10px #0001;transition:.25s}.heart:hover{background:var(--b);color:#fff}
+.quick-add{position:absolute;left:0;right:0;bottom:-46px;background:var(--b);color:#fff;text-align:center;padding:13px;font-size:9px;letter-spacing:1.5px;transition:.3s;z-index:2}
+.card:hover .quick-add{bottom:0}
+.pi{padding:16px 2px 4px}.pi h3{font:17px var(--r);font-weight:500}.pi p{font-size:9px;color:#999;margin-top:6px;letter-spacing:.6px;text-transform:uppercase}.pi b{display:block;font-size:12px;margin-top:9px;letter-spacing:.3px}.pi .old{color:#aaa;text-decoration:line-through;font-weight:400;font-size:10px;margin-right:7px}
+.empty{padding:80px 0;text-align:center;color:#888;font-size:12px;grid-column:1/-1}
+/* Mobile filter drawer */
+.filters{position:fixed;left:-320px;top:0;width:300px;height:100%;background:#fff;z-index:95;padding:28px 24px;overflow-y:auto;transition:.4s;box-shadow:15px 0 40px #0002}
+.filters.open{left:0}
+.filters-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--l);padding-bottom:16px;margin-bottom:24px;font-size:10px;letter-spacing:1.5px}
+.filters-head button{border:0;background:none;font-size:18px;cursor:pointer}
+.overlay{position:fixed;inset:0;background:#0007;z-index:90;display:none}
+/* Footer + cart + search reused */
+footer{background:#111;color:white;padding:65px 34px 22px}.foot{max-width:1400px;margin:auto;display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:35px}.flogo{font:30px var(--r);letter-spacing:6px}.col h4{font-size:8px;color:#aaa;letter-spacing:2px;margin-bottom:18px}.col a{display:block;color:#ddd;font-size:10px;margin:0 0 11px}.bottom{max-width:1400px;margin:45px auto 0;border-top:1px solid #333;padding-top:17px;color:#777;font-size:8px;display:flex;justify-content:space-between}
+.search{position:fixed;inset:0;background:#fff;z-index:100;display:none;padding:35px}.search.open{display:block}.search-inner{max-width:750px;margin:auto}.search h2{font:40px var(--r);margin:80px 0 25px}.search input{width:100%;border:0;border-bottom:1px solid;padding:16px 4px;outline:0;font-size:18px}.search-close{float:right;border:0;background:none;font-size:18px;cursor:pointer}.results div{padding:12px 3px;border-bottom:1px solid #eee;font-size:12px}
+.cart{position:fixed;right:-420px;top:0;width:400px;height:100%;background:#fff;z-index:99;padding:25px;box-shadow:-15px 0 40px #0002;transition:.4s}.cart.open{right:0}.cart-head{display:flex;justify-content:space-between;border-bottom:1px solid var(--l);padding-bottom:18px;font-size:10px;letter-spacing:1px}.cart-item{display:flex;gap:14px;padding:22px 0}.cart-item img{width:80px;height:95px;object-fit:cover}.cart-total{position:absolute;left:25px;right:25px;bottom:25px;border-top:1px solid var(--l);padding-top:18px}.checkout{width:100%;margin-top:14px;padding:14px;background:#111;color:#fff;border:0;font-size:9px;letter-spacing:2px;cursor:pointer}
+@media(max-width:1000px){.products{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:850px){.nav{height:64px;padding:0 15px;display:flex;justify-content:space-between;align-items:center}.hamb{display:flex}.logo{font-size:22px;letter-spacing:4px}.tools{gap:11px;font-size:8px}.logo{order:2}.right{order:3}.search-desktop{display:none}.search-mobile{display:inline-flex;align-items:center;font-size:18px}.account{display:none}.links{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:0;z-index:40}.links.open{display:flex}.links a{padding:16px 20px;border-bottom:1px solid #eee}
+.shop-hero{padding:40px 20px 30px}.shop-hero h1{font-size:32px}.shop-wrap{padding:34px 18px 70px}
+.shop-layout{grid-template-columns:1fr}.filter-toggle{display:inline-block}.shop-layout>aside{display:none}
+.products{grid-template-columns:1fr 1fr;gap:22px 10px}.pic{height:220px}
+}
+</style>
+<link href="assets/css/site.css" rel="stylesheet"/><link rel="stylesheet" href="assets/css/luxe.css"></head>
+<body data-page="shop">
+<div class="announce">COMPLIMENTARY SHIPPING ON ORDERS OVER PKR 25,000</div>
+<header class="header" id="header">
+<div class="nav">
+<div class="tools"><button class="hamb" id="hamb"><i></i><i></i><i></i></button><span class="search-desktop" onclick="openSearch()" style="cursor:pointer">⌕ SEARCH</span></div>
+<a class="logo vx-wordmark" aria-label="VELTRIXS WATCHES home" href="index.html"><span class="vx-wordmark-primary">VELTRIXS</span><span class="vx-wordmark-secondary">WATCHES</span></a>
+<div class="tools right"><span class="search-mobile" onclick="openSearch()" style="cursor:pointer">⌕</span><a class="account" href="account.html">ACCOUNT</a><a href="wishlist.html">♡</a><span onclick="openCart()" style="cursor:pointer">CART (<b id="count">0</b>)</span></div>
+</div>
+<nav class="links" id="links"><a href="shop.html">NEW ARRIVALS</a><a href="shop.html?category=men">MEN</a><a href="shop.html?category=women">WOMEN</a><a href="shop.html?category=timepieces">TIMEPIECES</a><a href="collections.html">COLLECTIONS</a><a href="shop.html?category=accessories">ACCESSORIES</a><a href="shop.html?category=sale">SALE</a></nav>
+</header>
+<section class="shop-hero">
+<div class="crumb"><a href="index.html">HOME</a> / <span id="crumbLabel">SHOP</span></div>
+<h1 id="shopTitle">All Timepieces</h1>
+<p id="shopSub">Designed to become part of your story.</p>
+</section>
+<div class="shop-wrap">
+<div class="toolbar">
+<span class="count" id="resultCount">Showing 12 items</span>
+<div class="toolbar-right">
+<button class="filter-toggle" onclick="openFilters()">FILTERS +</button>
+<div class="sort"><select id="sortSelect" onchange="applyFilters()">
+<option value="featured">SORT: FEATURED</option>
+<option value="new">SORT: NEWEST</option>
+<option value="low">PRICE: LOW TO HIGH</option>
+<option value="high">PRICE: HIGH TO LOW</option>
+</select></div>
+</div>
+</div>
+<div class="shop-layout">
+<aside class="fsidebar">
+<div class="fgroup">
+<h4>CATEGORY</h4>
+<label><input class="f-cat" onchange="applyFilters()" type="checkbox" value="men"/> Men</label>
+<label><input class="f-cat" onchange="applyFilters()" type="checkbox" value="women"/> Women</label>
+<label><input class="f-cat" onchange="applyFilters()" type="checkbox" value="accessories"/> Accessories</label>
+<label><input class="f-cat" onchange="applyFilters()" type="checkbox" value="sale"/> Sale</label>
+</div>
+<div class="fgroup">
+<h4>COLLECTION</h4>
+<label><input class="f-col" onchange="applyFilters()" type="checkbox" value="automatic"/> Automatic</label>
+<label><input class="f-col" onchange="applyFilters()" type="checkbox" value="gold"/> Gold</label>
+<label><input class="f-col" onchange="applyFilters()" type="checkbox" value="black"/> Black Steel</label>
+</div>
+<div class="fgroup">
+<h4>PRICE</h4>
+<label><input checked="" name="price" onchange="applyFilters()" type="radio" value="all"/> All Prices</label>
+<label><input name="price" onchange="applyFilters()" type="radio" value="0-30000"/> Under PKR 30,000</label>
+<label><input name="price" onchange="applyFilters()" type="radio" value="30000-50000"/> PKR 30,000 – 50,000</label>
+<label><input name="price" onchange="applyFilters()" type="radio" value="50000-999999"/> PKR 50,000+</label>
+</div>
+<button class="clear-filters" onclick="clearFilters()">CLEAR ALL FILTERS</button>
+</aside>
+<div class="products" id="productGrid"></div>
+</div>
+</div>
+<footer><div class="foot"><div class="brand"><div class="flogo vx-wordmark" aria-label="VELTRIXS WATCHES"><span class="vx-wordmark-primary">VELTRIXS</span><span class="vx-wordmark-secondary">WATCHES</span></div><p style="color:#777;font-size:10px;margin-top:16px">Luxury timepieces for the modern collector.</p></div><div class="col"><h4>SHOP</h4><a href="shop.html">All Watches</a><a href="shop.html?category=men">Men</a><a href="shop.html?category=women">Women</a><a href="shop.html">New Arrivals</a></div><div class="col"><h4>ABOUT</h4><a href="about.html">Our Story</a><a href="contact.html">Contact</a><a href="collections.html">Collections</a><a href="search.html">Search</a></div><div class="col"><h4>CUSTOMER CARE</h4><a href="contact.html">Help Center</a><a href="contact.html?topic=shipping">Shipping &amp; Delivery</a><a href="contact.html?topic=returns">Returns &amp; Exchange</a><a href="contact.html?topic=privacy">Privacy Policy</a></div></div><div class="bottom"><span>© 2026 VELTRIXS WATCHES. ALL RIGHTS RESERVED.</span><span>INSTAGRAM · FACEBOOK · TIKTOK</span></div></footer>
+<div class="overlay" id="overlay" onclick="closeAll()"></div>
+<aside class="filters" id="filtersPanel"><div class="filters-head"><span>FILTERS</span><button onclick="closeFilters()">✕</button></div>
+<div class="fgroup">
+<h4>CATEGORY</h4>
+<label><input class="f-cat-m" onchange="syncMobile(this,'f-cat')" type="checkbox" value="men"/> Men</label>
+<label><input class="f-cat-m" onchange="syncMobile(this,'f-cat')" type="checkbox" value="women"/> Women</label>
+<label><input class="f-cat-m" onchange="syncMobile(this,'f-cat')" type="checkbox" value="accessories"/> Accessories</label>
+<label><input class="f-cat-m" onchange="syncMobile(this,'f-cat')" type="checkbox" value="sale"/> Sale</label>
+</div>
+<div class="fgroup">
+<h4>COLLECTION</h4>
+<label><input class="f-col-m" onchange="syncMobile(this,'f-col')" type="checkbox" value="automatic"/> Automatic</label>
+<label><input class="f-col-m" onchange="syncMobile(this,'f-col')" type="checkbox" value="gold"/> Gold</label>
+<label><input class="f-col-m" onchange="syncMobile(this,'f-col')" type="checkbox" value="black"/> Black Steel</label>
+</div>
+<div class="fgroup">
+<h4>PRICE</h4>
+<label><input checked="" name="price-m" onchange="syncPriceMobile(this)" type="radio" value="all"/> All Prices</label>
+<label><input name="price-m" onchange="syncPriceMobile(this)" type="radio" value="0-30000"/> Under PKR 30,000</label>
+<label><input name="price-m" onchange="syncPriceMobile(this)" type="radio" value="30000-50000"/> PKR 30,000 – 50,000</label>
+<label><input name="price-m" onchange="syncPriceMobile(this)" type="radio" value="50000-999999"/> PKR 50,000+</label>
+</div>
+<button class="btn" onclick="closeFilters()" style="width:100%">VIEW RESULTS</button>
+</aside>
+<aside class="cart" id="cart"><div class="cart-head"><span>YOUR CART</span><span onclick="closeCart()" style="cursor:pointer">✕</span></div><div class="cart-item"><img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&amp;fit=crop&amp;w=300&amp;q=85"/><div><b>VELTRIXS WATCHES Timepiece</b><p style="font-size:11px;margin-top:8px">Your cart is ready for checkout.</p></div></div><div class="cart-total"><div style="display:flex;justify-content:space-between;font-size:11px"><span>SUBTOTAL</span><b>PKR 0</b></div><button class="checkout" onclick="location.href='cart.html'">VIEW CART &amp; CHECKOUT</button></div></aside>
+<div class="search" id="search"><button class="search-close" onclick="closeSearch()">✕</button><div class="search-inner"><h2>Search VELTRIXS WATCHES</h2><input id="q" oninput="searchProducts()" placeholder="Search watches..."/><div class="results" id="results"><div>Try “automatic”, “gold”, or a watch name.</div></div></div></div>
+
+<script src="assets/js/backend.js"></script><script src="assets/js/store.js"></script><script src="assets/js/frontend.js"></script></body>
+</html>

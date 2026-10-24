@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title id="pageTitle">Product — VELTRIXS WATCHES</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--b:#0c0c0c;--g:#b99761;--c:#f5f2ec;--l:#e5e1da;--s:'Inter',Arial,sans-serif;--r:'Playfair Display',Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--s);color:var(--b);overflow-x:hidden}a{text-decoration:none;color:inherit}
+.announce{background:#0c0c0c;color:white;text-align:center;padding:10px;font-size:9px;letter-spacing:2px}.header{position:sticky;top:0;background:#fff;z-index:50;border-bottom:1px solid #eee}.nav{height:76px;max-width:1500px;margin:auto;padding:0 34px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}.logo{font:31px var(--r);letter-spacing:7px}.tools{display:flex;gap:22px;font-size:9px;letter-spacing:1.5px;align-items:center}.right{justify-content:flex-end}.hamb{display:none;border:0;background:none;flex-direction:column;gap:5px}.hamb i{width:21px;height:1.5px;background:#111}.links{display:flex;justify-content:center;gap:38px;border-top:1px solid #f2f0eb;padding:14px;font-size:9px;letter-spacing:2px}.links a:hover{color:var(--g)}
+.search-mobile{display:none}
+.btn{display:inline-block;border:1px solid currentColor;padding:16px 25px;font-size:9px;letter-spacing:2px;transition:.3s;cursor:pointer;text-align:center}.btn:hover{background:#fff;color:#111}
+.btn-dark{background:#111;color:#fff;border-color:#111}.btn-dark:hover{background:transparent;color:#111}
+
+/* Breadcrumb */
+.crumb-bar{max-width:1500px;margin:auto;padding:22px 34px 0;font-size:9px;letter-spacing:1.5px;color:#999}.crumb-bar a:hover{color:var(--g)}
+
+/* Product main */
+.product-main{max-width:1500px;margin:auto;padding:30px 34px 90px;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.gallery-main{height:620px;background:#f0efec;overflow:hidden;border-radius:2px}.gallery-main img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.thumbs{display:flex;gap:12px;margin-top:14px}.thumb{width:88px;height:88px;overflow:hidden;border-radius:2px;cursor:pointer;opacity:.6;transition:.25s;border:1px solid transparent}.thumb img{width:100%;height:100%;object-fit:cover}.thumb:hover{opacity:1}.thumb.active{opacity:1;border-color:var(--b)}
+
+.p-info{padding-top:10px}
+.p-badge{display:inline-block;background:var(--b);color:#fff;font-size:8px;letter-spacing:1.5px;padding:6px 10px;margin-bottom:16px}
+.p-badge.sale{background:#a33}
+.p-info h1{font:44px var(--r);font-weight:500;letter-spacing:-.5px}
+.p-info .sub{font-size:10px;color:#999;letter-spacing:1.5px;text-transform:uppercase;margin-top:10px}
+.p-price{font-size:20px;margin-top:22px;letter-spacing:.3px}.p-price .old{color:#aaa;text-decoration:line-through;font-weight:400;font-size:15px;margin-right:10px}
+.p-desc{font-size:12.5px;line-height:2;color:#666;margin-top:22px;max-width:460px}
+.opt-group{margin-top:34px}.opt-group h4{font-size:9px;letter-spacing:2px;color:#999;margin-bottom:12px}
+.opt-row{display:flex;gap:10px;flex-wrap:wrap}
+.opt{border:1px solid var(--l);padding:10px 18px;font-size:10px;letter-spacing:1px;cursor:pointer;transition:.2s;background:#fff}
+.opt:hover{border-color:var(--b)}.opt.active{background:var(--b);color:#fff;border-color:var(--b)}
+.qty-row{display:flex;align-items:center;gap:16px;margin-top:34px}
+.qty{display:flex;align-items:center;border:1px solid var(--l)}
+.qty button{width:38px;height:42px;border:0;background:none;font-size:14px;cursor:pointer}
+.qty span{width:38px;text-align:center;font-size:12px}
+.add-cart{flex:1;padding:16px;background:var(--b);color:#fff;border:0;font-size:9px;letter-spacing:2px;cursor:pointer;transition:.3s}
+.add-cart:hover{background:var(--g)}
+.added-msg{font-size:10px;letter-spacing:1px;color:var(--g);margin-top:14px;display:none}
+.wish-row{margin-top:16px}
+.wish-btn{display:flex;align-items:center;gap:8px;font-size:9px;letter-spacing:1.5px;color:#666;background:none;border:0;cursor:pointer}
+.wish-btn:hover{color:var(--b)}
+
+.trust{display:flex;gap:28px;margin-top:36px;padding-top:28px;border-top:1px solid var(--l);font-size:9px;letter-spacing:1px;color:#888;flex-wrap:wrap}
+.trust span{display:flex;align-items:center;gap:7px}
+
+.accordion{margin-top:38px;border-top:1px solid var(--l)}
+.acc-item{border-bottom:1px solid var(--l)}
+.acc-head{display:flex;justify-content:space-between;align-items:center;padding:20px 2px;cursor:pointer;font-size:10px;letter-spacing:1.5px}
+.acc-head span.plus{font-size:16px;transition:.25s}
+.acc-item.open .acc-head span.plus{transform:rotate(45deg)}
+.acc-body{max-height:0;overflow:hidden;transition:.35s}
+.acc-item.open .acc-body{max-height:400px}
+.acc-body-inner{padding:0 2px 22px;font-size:11.5px;line-height:1.9;color:#666}
+.spec-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed var(--l);font-size:11px}
+.spec-row span:first-child{color:#999}
+
+/* Related */
+.related{max-width:1500px;margin:auto;padding:0 34px 100px}
+.related .head{text-align:center;margin-bottom:45px}.related .head h2{font:36px var(--r);margin-top:8px}.related .head p{font-size:12px;color:#777;margin-top:8px}.eyebrow{color:var(--g);font-size:9px;letter-spacing:3px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{position:relative;transition:.35s}.card:hover{transform:translateY(-4px)}
+.pic{height:330px;overflow:hidden;background:#f0efec;border-radius:2px;position:relative}.pic img{width:100%;height:100%;object-fit:cover;transition:.6s cubic-bezier(.25,.8,.25,1)}.card:hover .pic img{transform:scale(1.07)}
+.badge{position:absolute;z-index:2;top:12px;left:12px;background:#fff;padding:7px 9px;font-size:7px;letter-spacing:1.5px;box-shadow:0 2px 10px #0001}.badge.sale{background:var(--b);color:#fff}
+.heart{position:absolute;right:11px;top:11px;z-index:3;width:35px;height:35px;border:0;border-radius:50%;background:#fff;cursor:pointer;font-size:16px;box-shadow:0 2px 10px #0001;transition:.25s}.heart:hover{background:var(--b);color:#fff}
+.quick-add{position:absolute;left:0;right:0;bottom:-46px;background:var(--b);color:#fff;text-align:center;padding:13px;font-size:9px;letter-spacing:1.5px;transition:.3s;z-index:2}.card:hover .quick-add{bottom:0}
+.pi{padding:16px 2px 4px}.pi h3{font:16px var(--r);font-weight:500}.pi p{font-size:9px;color:#999;margin-top:6px;letter-spacing:.5px;text-transform:uppercase}.pi b{display:block;font-size:12px;margin-top:9px}
+
+footer{background:#111;color:white;padding:65px 34px 22px}.foot{max-width:1400px;margin:auto;display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:35px}.flogo{font:30px var(--r);letter-spacing:6px}.col h4{font-size:8px;color:#aaa;letter-spacing:2px;margin-bottom:18px}.col a{display:block;color:#ddd;font-size:10px;margin:0 0 11px}.bottom{max-width:1400px;margin:45px auto 0;border-top:1px solid #333;padding-top:17px;color:#777;font-size:8px;display:flex;justify-content:space-between}
+.search{position:fixed;inset:0;background:#fff;z-index:100;display:none;padding:35px}.search.open{display:block}.search-inner{max-width:750px;margin:auto}.search h2{font:40px var(--r);margin:80px 0 25px}.search input{width:100%;border:0;border-bottom:1px solid;padding:16px 4px;outline:0;font-size:18px}.search-close{float:right;border:0;background:none;font-size:18px;cursor:pointer}.results div{padding:12px 3px;border-bottom:1px solid #eee;font-size:12px}
+.cart{position:fixed;right:-420px;top:0;width:400px;height:100%;background:#fff;z-index:99;padding:25px;box-shadow:-15px 0 40px #0002;transition:.4s;overflow-y:auto}.cart.open{right:0}.cart-head{display:flex;justify-content:space-between;border-bottom:1px solid var(--l);padding-bottom:18px;font-size:10px;letter-spacing:1px}.cart-item{display:flex;gap:14px;padding:22px 0;border-bottom:1px solid #f4f2ee}.cart-item img{width:70px;height:85px;object-fit:cover}.cart-item h4{font:13px var(--r);font-weight:500}.cart-item p{font-size:9px;color:#999;margin-top:5px}.cart-total{position:sticky;bottom:0;background:#fff;left:0;right:0;border-top:1px solid var(--l);padding-top:18px;margin-top:10px}.checkout{width:100%;margin-top:14px;padding:14px;background:#111;color:#fff;border:0;font-size:9px;letter-spacing:2px;cursor:pointer}
+.overlay{position:fixed;inset:0;background:#0007;z-index:90;display:none}
+
+@media(max-width:1000px){.product-main{grid-template-columns:1fr;gap:34px}.gallery-main{height:440px}.products{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:850px){.nav{height:64px;padding:0 15px;display:flex;justify-content:space-between;align-items:center}.hamb{display:flex}.logo{font-size:22px;letter-spacing:4px}.tools{gap:11px;font-size:8px}.logo{order:2}.right{order:3}.search-desktop{display:none}.search-mobile{display:inline-flex;align-items:center;font-size:18px}.account{display:none}.links{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:0;z-index:40}.links.open{display:flex}.links a{padding:16px 20px;border-bottom:1px solid #eee}
+.crumb-bar{padding:16px 18px 0}.product-main{padding:20px 18px 60px}.p-info h1{font-size:32px}.gallery-main{height:360px}
+.related{padding:0 18px 70px}
+}
+</style>
+<link href="assets/css/site.css" rel="stylesheet"/><link rel="stylesheet" href="assets/css/luxe.css"></head>
+<body data-page="product">
+<div class="announce">COMPLIMENTARY SHIPPING ON ORDERS OVER PKR 25,000</div>
+<header class="header" id="header">
+<div class="nav">
+<div class="tools"><button class="hamb" id="hamb"><i></i><i></i><i></i></button><span class="search-desktop" onclick="openSearch()" style="cursor:pointer">⌕ SEARCH</span></div>
+<a class="logo vx-wordmark" aria-label="VELTRIXS WATCHES home" href="index.html"><span class="vx-wordmark-primary">VELTRIXS</span><span class="vx-wordmark-secondary">WATCHES</span></a>
+<div class="tools right"><span class="search-mobile" onclick="openSearch()" style="cursor:pointer">⌕</span><a class="account" href="account.html">ACCOUNT</a><a href="wishlist.html">♡</a><span onclick="openCart()" style="cursor:pointer">CART (<b id="count">0</b>)</span></div>
+</div>
+<nav class="links" id="links"><a href="shop.html">NEW ARRIVALS</a><a href="shop.html?category=men">MEN</a><a href="shop.html?category=women">WOMEN</a><a href="shop.html?category=timepieces">TIMEPIECES</a><a href="collections.html">COLLECTIONS</a><a href="shop.html?category=accessories">ACCESSORIES</a><a href="shop.html?category=sale">SALE</a></nav>
+</header>
+<div class="crumb-bar"><a href="index.html">HOME</a> / <a href="shop.html">SHOP</a> / <span id="crumbName">PRODUCT</span></div>
+<div class="product-main">
+<div class="gallery">
+<div class="gallery-main"><img alt="" id="mainImg" src=""/></div>
+<div class="thumbs" id="thumbs"></div>
+</div>
+<div class="p-info">
+<span class="p-badge" id="pBadge" style="display:none"></span>
+<h1 id="pName">—</h1>
+<div class="sub" id="pSub">—</div>
+<div class="p-price" id="pPrice">—</div>
+<p class="p-desc" id="pDesc">—</p>
+<div class="opt-group">
+<h4>STRAP</h4>
+<div class="opt-row" id="strapOpts"></div>
+</div>
+<div class="qty-row">
+<div class="qty"><button onclick="changeQty(-1)">−</button><span id="qtyVal">1</span><button onclick="changeQty(1)">+</button></div>
+<button class="add-cart" onclick="addToCart()">ADD TO CART — <span id="btnPrice"></span></button>
+</div>
+<div class="added-msg" id="addedMsg">✓ ADDED TO YOUR CART</div>
+<div class="wish-row"><button class="wish-btn">♡ ADD TO WISHLIST</button></div>
+<div class="trust">
+<span>✓ FREE SHIPPING OVER PKR 25,000</span>
+<span>✓ 7-DAY RETURNS</span>
+<span>✓ 2-YEAR WARRANTY</span>
+</div>
+<div class="accordion">
+<div class="acc-item open">
+<div class="acc-head" onclick="toggleAcc(this)"><span>DESCRIPTION</span><span class="plus">+</span></div>
+<div class="acc-body"><div class="acc-body-inner" id="accDesc">—</div></div>
+</div>
+<div class="acc-item">
+<div class="acc-head" onclick="toggleAcc(this)"><span>SPECIFICATIONS</span><span class="plus">+</span></div>
+<div class="acc-body"><div class="acc-body-inner" id="accSpecs"></div></div>
+</div>
+<div class="acc-item">
+<div class="acc-head" onclick="toggleAcc(this)"><span>SHIPPING &amp; RETURNS</span><span class="plus">+</span></div>
+<div class="acc-body"><div class="acc-body-inner">Complimentary shipping across Pakistan on all orders over PKR 25,000. Standard delivery in 3–5 business days. Every timepiece may be returned within 7 days of delivery in original, unworn condition for a full refund.</div></div>
+</div>
+</div>
+</div>
+</div>
+<section class="related">
+<div class="head"><div class="eyebrow">YOU MAY ALSO LIKE</div><h2>Complete the Collection</h2><p>Handpicked to pair with your selection.</p></div>
+<div class="products" id="relatedGrid"></div>
+</section>
+<footer><div class="foot"><div class="brand"><div class="flogo vx-wordmark" aria-label="VELTRIXS WATCHES"><span class="vx-wordmark-primary">VELTRIXS</span><span class="vx-wordmark-secondary">WATCHES</span></div><p style="color:#777;font-size:10px;margin-top:16px">Luxury timepieces for the modern collector.</p></div><div class="col"><h4>SHOP</h4><a href="shop.html">All Watches</a><a href="shop.html?category=men">Men</a><a href="shop.html?category=women">Women</a><a href="shop.html">New Arrivals</a></div><div class="col"><h4>ABOUT</h4><a href="about.html">Our Story</a><a href="contact.html">Contact</a><a href="collections.html">Collections</a><a href="search.html">Search</a></div><div class="col"><h4>CUSTOMER CARE</h4><a href="contact.html">Help Center</a><a href="contact.html?topic=shipping">Shipping &amp; Delivery</a><a href="contact.html?topic=returns">Returns &amp; Exchange</a><a href="contact.html?topic=privacy">Privacy Policy</a></div></div><div class="bottom"><span>© 2026 VELTRIXS WATCHES. ALL RIGHTS RESERVED.</span><span>INSTAGRAM · FACEBOOK · TIKTOK</span></div></footer>
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="cart" id="cart"><div class="cart-head"><span>YOUR CART</span><span onclick="closeCart()" style="cursor:pointer">✕</span></div><div id="cartItems"><div class="cart-item"><img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&amp;fit=crop&amp;w=300&amp;q=85"/><div><b>VELTRIXS WATCHES Timepiece</b><p style="font-size:11px;margin-top:8px">Your cart is ready for checkout.</p></div></div></div><div class="cart-total"><div style="display:flex;justify-content:space-between;font-size:11px"><span>SUBTOTAL</span><b id="cartSubtotal">PKR 0</b></div><button class="checkout" onclick="location.href='cart.html'">VIEW CART &amp; CHECKOUT</button></div></aside>
+<div class="search" id="search"><button class="search-close" onclick="closeSearch()">✕</button><div class="search-inner"><h2>Search VELTRIXS WATCHES</h2><input id="q" oninput="searchProducts()" placeholder="Search watches..."/><div class="results" id="results"><div>Try “automatic”, “gold”, or a watch name.</div></div></div></div>
+
+<script src="assets/js/backend.js"></script><script src="assets/js/store.js"></script><script src="assets/js/frontend.js"></script></body>
+</html>
