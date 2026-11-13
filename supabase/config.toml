@@ -1,0 +1,5 @@
+project_id = "hpjferomelaupnpuvupu"
+[functions.place-order]
+verify_jwt = false
+[functions.contact-submit]
+verify_jwt = false

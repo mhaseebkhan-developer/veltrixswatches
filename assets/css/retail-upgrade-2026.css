@@ -1,0 +1,96 @@
+/* VELTRIXS WATCHES — Contemporary luxury retail, November 2026. UI only. */
+:root{
+  --b:#101c29!important;--g:#ca9650!important;--c:#f2ede5!important;--l:#d9dfe4!important;
+  --vx-ink:#172536;--vx-cream:#f8f6f2;--vx-champagne:#c79552;--vx-muted:#687583;
+  --vx-border:#dee4e9;--vx-shadow:0 20px 60px rgba(16,29,42,.12);
+}
+html{scroll-padding-top:140px}
+body{background:#f7f9fa!important;color:#162536!important}
+.announce{background:linear-gradient(95deg,#122235,#1e3147 65%,#26394e)!important;color:#f4d8a5!important;border-bottom:1px solid rgba(222,172,95,.18);letter-spacing:.17em!important}
+.header{background:rgba(255,255,255,.97)!important;box-shadow:0 8px 36px rgba(14,33,48,.09)!important;border-bottom:1px solid rgba(194,157,103,.23)!important}
+.header .links{background:#fff!important;border-top:1px solid #e8edf0!important}
+.header .links a,.header .tools,.header .nav{color:#162739}
+.header .links a:hover,.header .tools a:hover{color:#b88337!important}
+.vx-wordmark-primary{color:#192b40!important}
+.vx-wordmark-secondary{color:#b57c32!important}
+.btn-dark,.checkout,.add-cart,.quick-add,button.auth-submit{background:linear-gradient(110deg,#14283e,#264464)!important;color:#fff!important;border:1px solid #31435b!important;box-shadow:0 8px 20px rgba(18,39,61,.11)!important}
+.btn-dark:hover,.checkout:hover,.add-cart:hover,.quick-add:hover,button.auth-submit:hover{background:linear-gradient(110deg,#23415e,#315674)!important;box-shadow:0 13px 24px rgba(18,39,61,.17)!important}
+.hero:before{background-image:linear-gradient(100deg,rgba(6,17,31,.89) 0%,rgba(16,36,57,.68) 50%,rgba(5,16,27,.18) 100%),var(--dynamic-bg,url('https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=2200&q=90'))!important}
+.hero .eyebrow,.eyebrow,.vx-kicker{color:#c58b42!important}
+.hero .btn{background:#e4b975!important;border-color:#e4b975!important;color:#17273a!important;box-shadow:0 13px 38px rgba(0,0,0,.2)}
+.hero .btn:hover{background:#ffdfaa!important}
+.hero h1{text-shadow:0 13px 40px rgba(0,0,0,.15)!important}
+.news{background:linear-gradient(115deg,#10263e,#213e5d)!important;color:#fff!important}
+.news h2{color:#fff!important}.news p{color:#dbe3e8!important}
+.page-banner{background:linear-gradient(130deg,#eef3f7,#fff 70%)!important;border-bottom:1px solid #dee7ed}
+.page-banner h1{color:#182b42!important}
+.card{border:1px solid #e5ebef!important;border-radius:16px!important;box-shadow:0 9px 28px rgba(20,44,62,.065)!important}
+.card:hover{box-shadow:0 25px 53px rgba(20,44,62,.16)!important}
+.card .pic{background:#f0f4f5!important}
+.card .pi b,.card .pi strong{color:#213955!important}
+.paper,.vx-account-section{background:#fff!important;border-color:#e3e9ed!important;box-shadow:0 20px 52px rgba(15,37,55,.055)!important}
+input,select,textarea{accent-color:#ad7c3d}input:focus,textarea:focus,select:focus{border-color:#ad7c3d!important;outline-color:#ad7c3d!important}
+footer{background:#101e30!important;color:#f5f6f4!important;border-top:4px solid #c3924a}
+footer .col a:hover,footer .bottom a:hover{color:#f2c681!important}
+footer .col h4{color:#e3b977!important}
+footer .flogo .vx-wordmark-primary{color:#f8f6f2!important}
+footer .flogo .vx-wordmark-secondary{color:#ddaa62!important}
+.vx-footer-admin-link{display:inline-flex!important;align-items:center;gap:9px;color:#ffdfae!important;border:1px solid rgba(236,181,101,.4);border-radius:8px;padding:9px 12px;margin-top:4px!important}
+.vx-footer-admin-link:hover{background:rgba(205,159,93,.12)}
+/* Visible standalone account actions for tablets & phones. */
+.vx-mobile-auth-bar{display:none}
+.header .links .vx-auth-menu-item{display:none!important}
+@media (max-width:1024px){
+  .vx-mobile-auth-bar{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 13px 10px;background:#f2f6f8;border-top:1px solid #e6ebee;box-shadow:inset 0 1px 0 #fff}
+  .vx-mobile-auth-bar a{min-height:42px;display:flex;align-items:center;justify-content:center;gap:7px;padding:9px 8px;font:800 10px/1.3 Manrope,Inter,Arial,sans-serif;letter-spacing:.075em;text-decoration:none;border-radius:9px;text-align:center;white-space:nowrap}
+  .vx-mobile-auth-bar .vx-signin{background:#fff;color:#183149;border:1px solid #bbcbd4;box-shadow:0 2px 8px #102b3a10}
+  .vx-mobile-auth-bar .vx-signup{background:linear-gradient(115deg,#172d44,#30526d);color:#fff;border:1px solid #29445b;box-shadow:0 4px 13px #142d4826}
+  .vx-mobile-auth-bar a:hover,.vx-mobile-auth-bar a:focus-visible{outline:2px solid #c9944d;outline-offset:1px}
+  .vx-mobile-auth-bar a>svg{width:15px;height:15px;flex-shrink:0}
+  .header .links .vx-auth-menu-item{display:flex!important;gap:10px;color:#a5712c!important;font-weight:800!important}
+  .header .links .vx-auth-menu-item::after{display:none}
+}
+@media(max-width:850px){
+  .header .links.open{top:100%!important;max-height:calc(100dvh - 166px);overflow-y:auto;background:#fff!important;box-shadow:0 22px 36px rgba(18,37,55,.16);z-index:65!important}
+  .header .nav .account{display:none!important}
+}
+@media(max-width:390px){
+  .vx-mobile-auth-bar{gap:6px;padding:7px 9px 9px}
+  .vx-mobile-auth-bar a{font-size:9px;letter-spacing:.05em;min-height:40px}
+}
+/* Checkout: no shipping form may show until a verified authenticated user is present. */
+body[data-page="checkout"] #checkoutForm:not(.vx-checkout-unlocked){display:none!important}
+.vx-checkout-gate{background:radial-gradient(ellipse at 75% 15%,#315372 0%,#14273c 55%,#112132 100%);color:#fff;padding:clamp(22px,5vw,46px);border-radius:20px;box-shadow:0 25px 52px #192b4930;margin:0 0 24px;position:relative;overflow:hidden}
+.vx-checkout-gate[hidden]{display:none!important}
+.vx-checkout-gate:after{content:'V';position:absolute;right:12px;bottom:-65px;font:normal 250px/1 Playfair Display,Georgia,serif;color:rgba(255,255,255,.04);pointer-events:none}
+.vx-checkout-gate h2{font:500 clamp(27px,4vw,43px)/1.1 Playfair Display,Georgia,serif;margin:12px 0 10px;color:#fff}
+.vx-checkout-gate p{font:13px/1.9 Inter,Arial,sans-serif;color:#d9e3e8;max-width:490px}
+.vx-checkout-gate .eyebrow{color:#e9bd7a!important}
+.vx-checkout-gate-links{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 12px}
+.vx-checkout-gate-links a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 20px;border-radius:9px;font:700 11px Manrope,Inter,Arial,sans-serif;letter-spacing:.06em;text-decoration:none}
+.vx-checkout-gate-links a:first-child{background:#efc58a;color:#14263a}
+.vx-checkout-gate-links a:last-child{border:1px solid #a5b6c5;color:#fff}
+.vx-checkout-gate small{font-size:11px;color:#b4c5d1}
+/* Account: simplified, more confident Shopify-like retail login experience (original brand). */
+body[data-page="account"] .auth-shell{border:1px solid #dde7ed!important;box-shadow:0 26px 75px rgba(16,40,63,.16)!important;border-radius:21px!important;overflow:hidden}
+body[data-page="account"] .auth-visual{background:linear-gradient(135deg,rgba(7,23,40,.48),rgba(12,28,49,.85)),url('https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1600&q=85') center/cover!important;color:#fff}
+body[data-page="account"] .auth-main{background:#fff!important}
+body[data-page="account"] .auth-tabs{background:#eff4f6!important;border-radius:11px!important;padding:5px!important;gap:5px!important}
+body[data-page="account"] .auth-tab{border-radius:8px!important;font-weight:800!important;letter-spacing:.04em!important}
+body[data-page="account"] .auth-tab.is-active{background:#fff!important;color:#18354e!important;box-shadow:0 3px 9px rgba(16,42,58,.13)!important}
+body[data-page="account"] .auth-field input{background:#fbfcfd!important;border:1px solid #cad7df!important;border-radius:10px!important;min-height:50px!important;font-size:14px!important;box-shadow:none!important}
+body[data-page="account"] .auth-field input:focus{background:#fff!important;border-color:#b57a2e!important;box-shadow:0 0 0 3px rgba(194,139,62,.12)!important}
+body[data-page="account"] .auth-submit{min-height:52px!important;background:linear-gradient(110deg,#172e45,#2b506e)!important;color:#fff!important;border-radius:10px!important;box-shadow:0 10px 25px rgba(16,43,69,.18)!important}
+body[data-page="account"] .auth-form-footer{gap:12px!important;flex-wrap:wrap!important}
+.vx-auth-trust{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0 23px;padding:11px 12px;background:#eff6f5;border:1px solid #d5e6e4;border-radius:9px;color:#24544a;font:600 11px/1.55 Inter,Arial,sans-serif}
+.vx-auth-trust svg{width:16px;height:16px;flex:0 0 16px}
+.vx-account-benefits{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:15px;margin-top:18px;border-top:1px solid #e5e9ee;color:#65788a;font:600 10px/1.5 Inter,Arial,sans-serif;letter-spacing:.02em}
+.vx-account-benefits span{display:inline-flex;align-items:center;gap:6px}
+.vx-account-benefits svg{width:14px;height:14px;color:#b48a52}
+@media(max-width:600px){
+ .vx-checkout-gate{border-radius:14px;padding:24px 18px}
+ .vx-checkout-gate-links{flex-direction:column}
+ .vx-checkout-gate-links a{width:100%}
+ .vx-account-benefits{gap:8px}
+ body[data-page="account"] .auth-shell{border-radius:14px!important}
+}

@@ -1,0 +1,107 @@
+/* VELTRIXS WATCHES / Midnight Atelier — executive admin theme.
+   Only presentation. Does not change auth, order/status inventory or DB operations. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600&display=swap');
+:root{--b:#0c2543;--g:#d6ad6d;--c:#edf3f9;--l:#d7e3ee;--s:'DM Sans',Arial,sans-serif;--r:'Playfair Display',Georgia,serif;--admin-bg:#edf3f9;--admin-navy:#071b35;--admin-royal:#164d83;--admin-platinum:#e4eef6;--admin-gold:#d7ac69}
+*{box-sizing:border-box}
+body{font-family:'DM Sans',Arial,sans-serif!important;background:var(--admin-bg)!important;color:#152c47!important}
+.admin-layout{background:var(--admin-bg)!important;grid-template-columns:252px minmax(0,1fr)!important}
+.side{background:linear-gradient(167deg,#08172d 0%,#123866 58%,#0a213e 100%)!important;color:#ecf4fd!important;border-right:1px solid #6382a744!important;padding:28px 13px 35px!important;box-shadow:13px 0 32px rgba(7,24,45,.10)!important}
+.side::before{content:'';position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,#f5d6a0,#b9863f,#f5d6a0)}
+.side-logo.vx-wordmark{display:flex!important;flex-direction:column;align-items:flex-start;gap:1px;max-width:100%!important;margin:14px 12px 3px!important;text-decoration:none}
+.side-logo.vx-wordmark .vx-wordmark-primary{font:500 clamp(22px,2vw,28px)/1.04 'Playfair Display',Georgia,serif!important;color:#fff!important;letter-spacing:1.5px!important;white-space:nowrap!important}
+.side-logo.vx-wordmark .vx-wordmark-secondary{font:800 9px/1.5 'Manrope',sans-serif!important;letter-spacing:4px!important;color:#dfb878!important;white-space:nowrap!important}
+.side-kicker{margin:12px 14px 29px!important;color:#aac4de!important;font:800 9px/1.5 'Manrope',sans-serif!important;letter-spacing:2px!important}
+.nav-group{font:800 9px/1.3 'Manrope',sans-serif!important;color:#afbfce!important;letter-spacing:2px!important;margin:26px 14px 11px!important}
+.side nav a{color:#d4e1ef!important;border-radius:5px!important;margin:3px 4px!important;padding:13px 15px!important;letter-spacing:.2px!important;font:600 12px 'DM Sans',Arial,sans-serif!important;transition:background .18s,color .18s!important;position:relative!important;border:1px solid transparent!important}
+.side nav a:hover{background:#ffffff1c!important;color:#fff!important;border-color:#d3e4f32b!important}
+.side nav a.active{background:linear-gradient(94deg,#ffffff28,#ffffff09)!important;color:#fff!important;border:1px solid #c7a36966!important;box-shadow:inset 3px 0 0 #e8bc76!important}
+.side-foot{border-top:1px solid #ffffff32!important;color:#c3d4e8!important}
+.admin-main{background:#f0f5fa!important;min-width:0!important}
+.topbar{background:linear-gradient(105deg,#fff,#eff5fa)!important;min-height:76px!important;padding:17px clamp(17px,3vw,44px)!important;border-bottom:1px solid #d3e0ec!important;box-shadow:0 5px 25px #0b34531a!important}
+.topbar small{font:800 10px/1.5 'Manrope',sans-serif!important;color:#30577e!important;letter-spacing:1.6px!important}
+.topbar .btn{border-color:#c2d6e9!important;color:#15416c!important;background:#fff!important}
+.topbar .btn:hover{background:#e8f0f8!important}
+.admin-content{padding:clamp(25px,4vw,52px) clamp(18px,3.3vw,55px) 85px!important;max-width:1670px!important}
+.admin-kicker{font:800 10px/1.5 'Manrope',sans-serif!important;letter-spacing:2.2px!important;color:#b07a3f!important}
+.admin-heading{gap:15px!important;margin-top:9px!important;margin-bottom:30px!important}
+.admin-heading h1{font:500 clamp(35px,3.6vw,55px)/1.13 'Playfair Display',Georgia,serif!important;color:#0b2a4d!important;letter-spacing:-1.5px!important}
+.admin-heading p{font-size:12px!important;color:#668098!important;line-height:1.75!important}
+.admin-content .note{background:#e7f0f8!important;color:#345c7e!important;border:1px solid #c6d9eb!important;border-left:4px solid #c59550!important;padding:17px 21px!important;border-radius:5px!important;font-size:12px!important;line-height:1.7!important}
+.admin-content .metric,.admin-content .panel{background:#fff!important;border:1px solid #ccdce9!important;border-radius:7px!important;box-shadow:0 14px 35px #103e6613!important;min-width:0!important}
+.admin-content .panel{padding:clamp(19px,2.7vw,33px)!important;overflow:visible!important}
+.admin-content .panel h2{font:500 clamp(24px,2.5vw,31px) 'Playfair Display',Georgia,serif!important;color:#12395e!important;letter-spacing:-.6px!important}
+.grid-4{gap:18px!important}.grid-2{gap:22px!important}
+.admin-content .metric{padding:25px!important;min-height:158px!important;position:relative;overflow:hidden!important;border-top:4px solid #d6ad69!important;background:linear-gradient(130deg,#fff 64%,#e9f2fa)!important;transition:transform .22s ease,box-shadow .22s ease!important}
+.admin-content .metric::before{content:'';position:absolute;right:-18px;top:-20px;width:115px;height:115px;border-radius:50%;border:2px solid #c4d6e96e;box-shadow:0 0 0 16px #c3d9ef40,0 0 0 32px #c8dbef35;pointer-events:none}
+.admin-content .metric:hover{transform:translateY(-4px)!important;box-shadow:0 22px 43px #103d6722!important}
+.admin-content .metric span{font:800 10px 'Manrope',Arial,sans-serif!important;color:#577089!important;letter-spacing:1.3px!important}
+.admin-content .metric strong{font:500 clamp(29px,3vw,43px) 'Playfair Display',Georgia,serif!important;color:#0b3058!important;letter-spacing:-1px!important;overflow-wrap:anywhere}
+.admin-content .metric p{color:#6a8195!important}
+.admin-content .table-scroll{max-width:100%;overflow-x:auto!important;-webkit-overflow-scrolling:touch;border:1px solid #d4e1ed;border-radius:6px;scrollbar-color:#c3d5e5 #eef4f8}
+.admin-content .table{min-width:590px!important;border-collapse:separate!important;border-spacing:0!important}
+.admin-content .table th{background:#eaf1f8!important;color:#315677!important;font:800 10px 'Manrope',sans-serif!important;letter-spacing:1px!important;padding:18px 14px!important;border-bottom:1px solid #cadbe9!important}
+.admin-content .table td{color:#273b50!important;font-size:12px!important;padding:17px 14px!important;border-bottom:1px solid #e4edf4!important;line-height:1.65!important}
+.admin-content .table tr:hover td{background:#f0f6fb!important}
+.admin-content .table a{color:#12528b!important}
+.admin-content .table a:hover{color:#b07c3e!important}
+.admin-content .table .actions button,.admin-content .table .actions a{border-radius:3px!important;border:1px solid #c4d7e7!important;background:#f3f8fc!important;color:#174974!important;padding:8px 11px!important}
+.admin-content .table .actions button:hover,.admin-content .table .actions a:hover{background:#dcebf7!important}
+.status-pill{border-radius:4px!important;background:#f4e9d8!important;color:#795528!important;font-size:10px!important;font-weight:800!important}
+.status-pill.shipped{background:#dcefe4!important;color:#236345!important}
+.status-pill.cancelled{background:#f8dede!important;color:#a33!important}
+.admin-content .btn,.topbar .btn{border-radius:4px!important;padding:13px 20px!important;min-height:43px;letter-spacing:1px!important;font:800 10px/1.35 'Manrope',sans-serif!important;text-align:center;white-space:normal!important}
+.admin-content .btn-dark{background:linear-gradient(110deg,#0c315c,#1d5a92)!important;color:#fff!important;border-color:#1c588d!important;box-shadow:0 9px 20px #0b3d6c30!important}
+.admin-content .btn-dark:hover{background:#245f91!important}
+.admin-content .btn-ghost{background:#fff!important;border-color:#c9d9e8!important;color:#16436b!important}
+.admin-content .field label{font:800 10px 'Manrope',sans-serif!important;color:#3f5e78!important;letter-spacing:1px!important}
+.admin-content .field input,.admin-content .field textarea,.admin-content .field select{background:#fcfdff!important;color:#142f4d!important;border:1px solid #bdcedf!important;border-radius:5px!important;font-size:14px!important;min-height:46px}
+.admin-content .field input:focus,.admin-content .field textarea:focus,.admin-content .field select:focus{border-color:#2c6da5!important;box-shadow:0 0 0 3px #1e6baa19!important;outline:none!important}
+.admin-content .preview{background:linear-gradient(130deg,#0a2b51,#0b1b32)!important;border:1px solid #d5ac66!important;border-radius:6px!important;color:#fff!important}
+.admin-content .preview h2{color:#fff!important}
+/* The real admin sign-in page uses the same visual language. */
+.login-page{min-height:100dvh!important;background:radial-gradient(ellipse at 16% 10%,#2c66a1b0 0%,transparent 42%),radial-gradient(ellipse at 90% 90%,#183e74 0%,transparent 44%),#06162b!important;padding:20px!important}
+.login-card{width:min(100%,505px)!important;max-width:505px!important;border:1px solid #8da9c6!important;border-top:5px solid #d5aa63!important;border-radius:7px!important;padding:clamp(27px,4.3vw,49px)!important;background:linear-gradient(150deg,#fff,#edf4fa)!important;box-shadow:0 33px 85px #020b1eaa!important}
+.login-card h1.vx-wordmark{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:3px!important;margin:0 0 21px!important}
+.login-card h1.vx-wordmark .vx-wordmark-primary{font:500 clamp(31px,5vw,43px)/1.1 'Playfair Display',serif!important;color:#0a2b52!important;letter-spacing:1.4px!important}
+.login-card h1.vx-wordmark .vx-wordmark-secondary{font:800 9px 'Manrope',sans-serif!important;color:#ad7937!important;letter-spacing:5px!important}
+.login-card h2{color:#123658!important;font-family:'Playfair Display',Georgia,serif!important}
+.login-card p{color:#5e7284!important}
+.login-card .field input{background:#fff!important;border:1px solid #b9cfe2!important;border-radius:4px!important;min-height:48px;font-size:16px!important}
+.login-card .btn-dark{background:linear-gradient(105deg,#0d325b,#225e95)!important;color:#fff!important;border:1px solid #245985!important;border-radius:4px!important}
+.login-card .btn:not(.btn-dark){color:#17476e!important;border-color:#bdd1e5!important;border-radius:4px!important}
+.login-card .side-kicker{color:#b27d3d!important;letter-spacing:2px!important}
+.admin-ui-backdrop{position:fixed;inset:0;background:#06172dc9;backdrop-filter:blur(3px);z-index:180;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+.admin-ui-backdrop.is-open{opacity:1;visibility:visible}
+.admin-menu-button{color:#0e3d6d!important;background:#eaf2f9!important;border:1px solid #c8d9e7!important;min-width:44px;min-height:44px;display:none;align-items:center;justify-content:center;border-radius:4px!important}
+@media(max-width:1120px){.admin-layout{grid-template-columns:222px minmax(0,1fr)!important}.grid-4{grid-template-columns:repeat(2,minmax(0,1fr))!important}.side-logo.vx-wordmark .vx-wordmark-primary{font-size:23px!important}}
+@media(max-width:780px){
+ .admin-layout{grid-template-columns:minmax(0,1fr)!important}
+ .admin-main{min-width:0!important}
+ .side{position:fixed!important;left:0!important;top:0!important;bottom:0!important;width:min(290px,86vw)!important;max-width:90vw;height:100dvh!important;transform:translateX(-106%);transition:transform .24s ease!important;z-index:220!important;overflow-y:auto;overflow-x:hidden}
+ .side.open{transform:translateX(0)!important}
+ .admin-menu-button{display:inline-flex!important}
+ .topbar{padding:12px 13px!important;min-height:67px!important;gap:7px!important}
+ .topbar small{font-size:9px!important;max-width:42vw;line-height:1.5!important;letter-spacing:.55px!important}
+ .topbar .btn{padding:10px!important;font-size:9px!important;min-height:41px!important}
+ .admin-content{padding:27px 15px 60px!important}
+ .admin-content .grid-2,.admin-content .form-grid{grid-template-columns:1fr!important}
+ .admin-heading{align-items:flex-start!important}
+ .admin-content .panel{padding:18px!important}
+}
+@media(max-width:500px){
+ .grid-4{grid-template-columns:1fr!important;gap:12px!important}
+ .admin-heading{flex-direction:column!important;align-items:stretch!important}
+ .admin-heading h1{font-size:35px!important}
+ .admin-content{padding:21px 12px 60px!important}
+ .admin-content .metric{min-height:126px!important;padding:20px!important}
+ .admin-content .panel{padding:17px 13px!important}
+ .admin-content .panel h2{font-size:23px!important}
+ .admin-content .table{min-width:560px!important}
+ .admin-content .field input,.admin-content .field textarea,.admin-content .field select{font-size:16px!important}
+ .login-page{padding:13px!important}
+ .login-card{padding:25px 18px!important}
+ .login-card h1.vx-wordmark .vx-wordmark-primary{font-size:clamp(26px,7.6vw,36px)!important}
+ .login-card h1.vx-wordmark .vx-wordmark-secondary{letter-spacing:3px!important}
+}
+@media(max-width:365px){.topbar small{font-size:8px!important}.topbar .btn{padding:9px 8px!important}.admin-content{padding-inline:10px!important}}
+@media(prefers-reduced-motion:reduce){.admin-ui-backdrop,.side,.admin-content .metric{transition:none!important}}
